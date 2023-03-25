@@ -5,7 +5,7 @@
 using namespace std;
 
 std::string sortByFreq(std::string s) {
-    vector<int> freq(36, 0);
+    vector<int> freq(s.size(), 0);
 
     // Count character frequencies
     for (char count : s) {
@@ -15,7 +15,7 @@ std::string sortByFreq(std::string s) {
     // Group the ones with same frequency 
     vector<vector<char> > group(s.size() + 1);
 
-    for (int i = 0; i < 36; i++) {
+    for (int i = 0; i < 128; i++) {
         if (freq[i] > 0) {
             group[freq[i]].push_back(static_cast<char>(i));
         }
@@ -23,7 +23,7 @@ std::string sortByFreq(std::string s) {
 
     // Sort characters in each group
     for (auto &group : group) {
-        vector<int> count(36, 0);
+        vector<int> count(128, 0);
         for (char c : group) {
             count[c]++;
         }
