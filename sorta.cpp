@@ -23,9 +23,11 @@ std::string sortByFreq(std::string s) {
 
     // Sort characters in each group
     for (auto &group : group) {
-        sort(group.begin(), group.end());
+        vector<int> count(128, 0);
+        for (char c : group) {
+            count[c]++;
+        }
     }
-
     // Rewirte the string
     string sorted_str;
     for (size_t i = 0; i < group.size(); i++) {
