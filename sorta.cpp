@@ -29,12 +29,12 @@ std::string sortByFreq(std::string s) {
         }
     }
     // Rewirte the string
-    string sorted_str;
+    string sorted;
     for (size_t i = 0; i < group.size(); i++) {
         for (char c : group[i]) {
-            sorted_str.append(i, c);
+            sorted.append(i, c);
         }
     }
 
-    return sorted_str;
+    return sorted;
 }
