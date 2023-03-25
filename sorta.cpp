@@ -5,7 +5,7 @@
 using namespace std;
 
 std::string sortByFreq(std::string s) {
-    vector<int> freq(s.size(), 0);
+    vector<int> freq(128, 0);
 
     // Count character frequencies
     for (char count : s) {
